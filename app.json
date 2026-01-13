@@ -1,0 +1,17 @@
+{
+  "name": "UnifiedDocumentVault",
+  "displayName": "Document Vault",
+  "version": "1.0.0",
+  "description": "Private, local-first, encrypted document management system",
+  "android": {
+    "package": "com.unifieddocumentvault",
+    "versionCode": 1,
+    "permissions": [
+      "CAMERA",
+      "READ_EXTERNAL_STORAGE",
+      "WRITE_EXTERNAL_STORAGE",
+      "USE_BIOMETRIC",
+      "USE_FINGERPRINT"
+    ]
+  }
+}
