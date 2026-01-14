@@ -22,7 +22,7 @@ A production-grade React Native Android application for securely storing, organi
 
 ### 📄 **Document Management**
 - **Smart Scanning** - Camera-based document capture
-- **OCR Technology** - Extract text from images (Google ML Kit + Tesseract)
+- **OCR Technology** - Extract text from images (on-device processing)
 - **Multiple Formats** - PDF, JPG, PNG, HEIC support
 - **Metadata Extraction** - Auto-detect dates, amounts, document numbers
 - **Expiry Tracking** - Never miss document renewals
@@ -54,13 +54,13 @@ A production-grade React Native Android application for securely storing, organi
 ```bash
 # Required
 Node.js >= 18
-Yarn >= 1.22
+npm >= 8
 Android Studio
 Android SDK (API 31+)
 
 # Verify installations
 node --version
-yarn --version
+npm --version
 adb --version
 ```
 
@@ -71,13 +71,13 @@ adb --version
 cd /app
 
 # 2. Install dependencies
-yarn install
+npm install --legacy-peer-deps
 
 # 3. Start Metro bundler
-yarn start
+npm start
 
 # 4. In another terminal, run on Android
-yarn android
+npm run android
 ```
 
 ### First-Time Setup
@@ -132,7 +132,7 @@ yarn android
 | **Encryption** | Crypto-JS (AES-256) |
 | **OCR** | Google ML Kit + Tesseract |
 | **Camera** | Vision Camera 3.6 |
-| **AI** | HuggingFace Transformers |
+| **AI** | On-device AI Models |
 | **Biometrics** | React Native Biometrics |
 
 ### Project Structure
@@ -220,13 +220,13 @@ yarn android
 
 ```bash
 # Unit tests
-yarn test
+npm test
 
 # With coverage
-yarn test --coverage
+npm test -- --coverage
 
 # E2E tests (requires Detox setup)
-yarn e2e:android
+npm run e2e:android
 ```
 
 ### Debug Mode
@@ -415,10 +415,10 @@ This project is proprietary and confidential.
 
 ```bash
 # Development
-yarn start          # Start Metro
-yarn android        # Run on Android
-yarn test           # Run tests
-yarn lint           # Lint code
+npm start           # Start Metro
+npx react-native run-android --no-packager     # Run on Android
+npm test            # Run tests
+npm run lint        # Lint code
 
 # Build
 cd android && ./gradlew assembleDebug     # Debug build
@@ -426,7 +426,7 @@ cd android && ./gradlew assembleRelease   # Release build
 
 # Clean
 cd android && ./gradlew clean
-yarn start --reset-cache
+npm start -- --reset-cache
 ```
 
 ---
@@ -434,5 +434,6 @@ yarn start --reset-cache
 **Built with ❤️ for Privacy and Security**
 
 **Version:** 1.0.0-alpha  
-**Last Updated:** January 2025  
+**Last Updated:** January 2026  
+**Package Manager:** npm  
 **Status:** MVP Complete, Ready for Development Testing
